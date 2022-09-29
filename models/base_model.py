@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Base Model"""
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime
 
 class BaseModel:
     """AirBnB Base class"""
@@ -11,8 +11,8 @@ class BaseModel:
         """__init__ of self"""
         if id is not None:
             self.id = str(id)
-            self.created_at = datetime.now(timezone.utc)
-            self.updated_at = datetime.now(timezone.utc)
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """overriding __str__ to print custom string"""
@@ -22,7 +22,7 @@ class BaseModel:
 
     def save(self):
         """update update_at to current datetime"""
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """Returns dictionary of __dict__"""
