@@ -11,8 +11,8 @@ class BaseModel:
         """__init__ of self"""
         if id is not None:
             self.id = str(id)
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
 
     def __str__(self):
         """overriding __str__ to print custom string"""
