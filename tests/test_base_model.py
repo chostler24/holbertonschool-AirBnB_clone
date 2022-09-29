@@ -3,7 +3,8 @@
 import unittest
 from models.base_model import BaseModel
 
+
 class TestBaseModel(unittest.TestCase):
     """Unittest class for Base Model"""
     def test___init__(self):
-        self.assertEqual(BaseModel.id, "")
+        self.assertNotEqual(self.id, "")
