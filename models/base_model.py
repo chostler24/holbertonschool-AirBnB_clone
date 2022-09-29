@@ -30,3 +30,4 @@ class BaseModel:
         new_dict['__class__'] = self.__class__.__name__
         new_dict['created_at'] = self.created_at
         new_dict['updated_at'] = self.updated_at
+        return new_dict
