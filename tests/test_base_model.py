@@ -12,7 +12,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_docs(self):
         """Testing for documentation"""
-        self.assertNotEqual(BaseModel.__init__.__doc__, "")
-        self.assertNotEqual(BaseModel.__str__.__doc__, "")
-        self.assertNotEqual(BaseModel.save.__doc__, "")
-        self.assertNotEqual(BaseModel.to_dict.__doc__, "")
+        self.assertNotEqual(len(BaseModel.__init__.__doc__), "")
+        self.assertNotEqual(len(BaseModel.__str__.__doc__), "")
+        self.assertNotEqual(len(BaseModel.save.__doc__), "")
+        self.assertNotEqual(len(BaseModel.to_dict.__doc__), "")
