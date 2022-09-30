@@ -19,5 +19,6 @@ class HBNBCommand(cmd.Cmd):
         """Empty line + Enter does nothing"""
         pass
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
