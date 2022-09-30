@@ -9,12 +9,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
-        return True
+        raise SystemExit
 
     def do_EOF(self, arg):
         """EOF command to exit the program"""
-        return True
+        raise SystemExit
 
+    def empty_line(self):
+        """Empty line + Enter does nothing"""
+        pass
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
