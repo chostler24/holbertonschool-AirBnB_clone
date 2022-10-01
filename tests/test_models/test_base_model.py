@@ -23,7 +23,7 @@ class TestBaseModel(unittest.TestCase):
     def test_creation(self):
         """Tests creation of BaseModel object"""
         obj = BaseModel()
-        self.assertTrue(obj)
-        self.assertTrue(obj.id)
-        self.assertTrue(obj.created_at)
-        self.assertTrue(obj.updated_at)
+        self.assertIsNotNone(obj)
+        self.assertIsNotNone(obj.id)
+        self.assertIsNotNone(obj.created_at)
+        self.assertIsNotNone(obj.updated_at)
