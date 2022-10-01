@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """console.py module"""
 import cmd
+import sys
 
 
 class HBNBCommand(cmd.Cmd):
-    """class defining console"""
+    """class defining console as HBNBCommand for its name"""
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
@@ -15,7 +16,7 @@ class HBNBCommand(cmd.Cmd):
         """EOF command to exit the program\n"""
         return True
 
-    def empty_line(self):
+    def emptyline(self):
         """Empty line + Enter does nothing\n"""
         pass
 
