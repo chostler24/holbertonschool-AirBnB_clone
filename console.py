@@ -4,6 +4,9 @@ import cmd
 from models.base_model import BaseModel
 
 
+objecto = object()
+
+
 class HBNBCommand(cmd.Cmd):
     """class defining console as HBNBCommand for its name"""
     prompt = "(hbnb) "
@@ -32,18 +35,23 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """Prints the string representation of an instance"""
-        if len(args) == 0:
-            print("** class doesn't exist **")
-        elif len(objecto.__class__.__name__) == 0:
-            print("** class name missing **")
-        elif len(args) == 1:
-            print("** instance id missing **")
+        print(objecto)
+        for arg in args:    
+            if len(arg) == 0:
+                print("** class doesn't exist **")
+            elif len(objecto.__class__.__name__) == 0:
+                print("** class name missing **")
+            elif len(args) == 1:
+                print("** instance id missing **")
         if hasattr(objecto, "id"):
             if len(str(objecto.id.__class__)) == 0:
                 print("** no instance found **")
             else:
                 print("There is an object")
                 print(objecto.id)
+        else:
+            print("How tho")
+            print(objecto)
 
     def do__destroy(self, args):
         """Deletes instance based on id"""
