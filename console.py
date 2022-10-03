@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""console.py module"""
+"""console.py module for tasks 7-8"""
 import cmd
 from models.base_model import BaseModel
 
