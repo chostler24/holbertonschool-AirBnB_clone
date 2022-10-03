@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """console.py module"""
 import cmd
-import sys
+from models.base_model import BaseModel
+
+
+objecto = object()
 
 
 class HBNBCommand(cmd.Cmd):
@@ -18,6 +21,51 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """Empty line + Enter does nothing\n"""
+        pass
+
+    def do_create(self, args):
+        """Create a new object"""
+        obj_ect = BaseModel()
+        if not obj_ect.__class__.__name__:
+            print("** class doesn't exist **")
+        elif len(obj_ect.__class__.__name__) == 0:
+            print("** class name missing **")
+        objecto = obj_ect
+        print(objecto)
+
+    def do_show(self, args):
+        """Prints the string representation of an instance"""
+        if len(args) == 0:
+            print("** class doesn't exist **")
+        elif len(objecto.__class__.__name__) == 0:
+            print("** class name missing **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        if hasattr(objecto, "id"):
+            if len(str(objecto.id.__class__)) == 0:
+                print("** no instance found **")
+            else:
+                print("There is an object")
+                print(objecto.id)
+        
+
+    def do__destroy(self, args):
+        """Deletes instance based on id"""
+        if len(args) == 0:
+            print("** class doesn't exist **")
+        elif len(objecto.__class__.__name__) == 0:
+            print("** class name missing **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        else:
+            objecto = {}
+
+    def do__all(self):
+        """Prints all string representation of all instances"""
+        print(str(objecto))
+
+    def do__update(self):
+        """Updates an instance based on the class name"""
         pass
 
 
