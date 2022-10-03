@@ -4,9 +4,6 @@ import cmd
 from models.base_model import BaseModel
 
 
-objecto = object()
-
-
 class HBNBCommand(cmd.Cmd):
     """class defining console as HBNBCommand for its name"""
     prompt = "(hbnb) "
@@ -47,7 +44,6 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("There is an object")
                 print(objecto.id)
-        
 
     def do__destroy(self, args):
         """Deletes instance based on id"""
