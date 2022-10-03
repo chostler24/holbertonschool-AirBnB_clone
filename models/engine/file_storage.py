@@ -1,19 +1,8 @@
 #!/bin/usr/python3
 """File storage"""
 import json
-import sys
-
-
-def save_to_json_file(my_obj, filename):
-    """Write to text file from object"""
-    with open(filename, "w", encoding="utf-8") as file:
-        file.write(json.dumps(my_obj))
-
-
-def load_from_json_file(filename):
-    """Create object from JSON"""
-    with open(filename, 'r') as file:
-        return json.load(file)
+import models
+from models.base_model import BaseModel
 
 
 class FileStorage:
