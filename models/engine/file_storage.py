@@ -1,7 +1,14 @@
 #!/bin/usr/python3
 """File storage"""
 import json
-import sys
+import models
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 def save_to_json_file(my_obj, filename):
