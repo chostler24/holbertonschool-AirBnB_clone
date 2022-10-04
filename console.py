@@ -67,7 +67,7 @@ class HBNBCommand(cmd.Cmd):
             print("How tho")
             print(objecto)
 
-    def do__destroy(self, args):
+    def do_destroy(self, args):
         """Deletes instance based on id"""
         if len(args) == 0:
             print("** class doesn't exist **")
@@ -78,11 +78,11 @@ class HBNBCommand(cmd.Cmd):
         else:
             objecto = {}
 
-    def do__all(self, args):
+    def do_all(self, args):
         """Prints all string representation of all instances"""
         print(str(objecto))
 
-    def do__update(self, args):
+    def do_update(self, args):
         """Updates an instance based on the class name"""
         pass
 
