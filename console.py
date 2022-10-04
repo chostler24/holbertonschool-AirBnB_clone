@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """console.py module for tasks 7-8"""
+
 import cmd
 from models.base_model import BaseModel
 from models.user import User
@@ -10,6 +11,8 @@ from models.place import Place
 from models.review import Review
 from models.engine.file_storage import FileStorage
 from models import storage
+
+
 valid_class = {"BaseModel": BaseModel,
                "User": User,
                "State": State,
@@ -22,6 +25,7 @@ valid_class = {"BaseModel": BaseModel,
 
 class HBNBCommand(cmd.Cmd):
     """class defining console as HBNBCommand for its name"""
+
     prompt = "(hbnb) "
 
     def do_quit(self, args):
@@ -38,6 +42,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """Create a new object"""
+<<<<<<< HEAD
         if len(args) == 0:
             print("** class name missing **")
         elif args not in valid_class.keys():
@@ -46,45 +51,55 @@ class HBNBCommand(cmd.Cmd):
             object = valid_class[args]()
             print(object.id)
             object.save()
+=======
+        obj_ect = BaseModel()
+        if not obj_ect.__class__.__name__:
+            print("** class doesn't exist **")
+        elif len(args) == 0:
+            print("** class name missing **")
+        print(obj_ect)
+>>>>>>> f9bbe14ec935cbe7c101e076247232e02679ee25
 
     def do_show(self, args):
         """Prints the string representation of an instance"""
-        print(objecto)
+        obj_ect = BaseModel()
+        obj_all = storage.all()
         for arg in args:
             if len(arg) == 0:
                 print("** class doesn't exist **")
-            elif len(objecto.__class__.__name__) == 0:
+            elif len(obj_ect.__class__.__name__) == 0:
                 print("** class name missing **")
             elif len(args) == 1:
                 print("** instance id missing **")
-        if hasattr(objecto, "id"):
-            if len(str(objecto.id.__class__)) == 0:
+        if hasattr(obj_ect, "id"):
+            if len(str(obj_ect.id.__class__)) == 0:
                 print("** no instance found **")
             else:
-                print("There is an object")
-                print(objecto.id)
+                print(obj_ect)
         else:
-            print("How tho")
-            print(objecto)
+            print(obj_all)
 
     def do_destroy(self, args):
         """Deletes instance based on id"""
+        obj_ect = BaseModel()
         if len(args) == 0:
             print("** class doesn't exist **")
-        elif len(objecto.__class__.__name__) == 0:
+        elif len(obj_ect.__class__.__name__) == 0:
             print("** class name missing **")
         elif len(args) == 1:
             print("** instance id missing **")
         else:
-            objecto = {}
+            del FileStorage.__objects
 
-    def do_all(self, args):
+    def do_all(self):
         """Prints all string representation of all instances"""
-        print(str(objecto))
+        obj_ect = BaseModel()
+        print(str(obj_ect))
 
-    def do_update(self, args):
+    def do_update(self):
         """Updates an instance based on the class name"""
-        pass
+        obj_ect = BaseModel()
+        print(obj_ect)
 
 
 if __name__ == '__main__':
