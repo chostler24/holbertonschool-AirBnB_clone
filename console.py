@@ -23,9 +23,6 @@ valid_class = {"BaseModel": BaseModel,
                }
 
 
-objecto = object()
-
-
 class HBNBCommand(cmd.Cmd):
     """class defining console as HBNBCommand for its name"""
 
@@ -50,45 +47,48 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(obj_ect.__class__.__name__) == 0:
             print("** class name missing **")
-        objecto = obj_ect
-        print(objecto)
+        print(obj_ect)
 
     def do_show(self, args):
         """Prints the string representation of an instance"""
+        obj_ect = BaseModel()
         for arg in args:
             if len(arg) == 0:
                 print("** class doesn't exist **")
-            elif len(objecto.__class__.__name__) == 0:
+            elif len(obj_ect.__class__.__name__) == 0:
                 print("** class name missing **")
             elif len(args) == 1:
                 print("** instance id missing **")
-        if hasattr(objecto, "id"):
-            if len(str(objecto.id.__class__)) == 0:
+        if hasattr(obj_ect, "id"):
+            if len(str(obj_ect.id.__class__)) == 0:
                 print("** no instance found **")
             else:
                 print("There is an object")
-                print(objecto.id)
+                print(obj_ect.id)
         else:
-            print(objecto)
+            print(obj_ect)
 
     def do_destroy(self, args):
         """Deletes instance based on id"""
+        obj_ect = BaseModel()
         if len(args) == 0:
             print("** class doesn't exist **")
-        elif len(objecto.__class__.__name__) == 0:
+        elif len(obj_ect.__class__.__name__) == 0:
             print("** class name missing **")
         elif len(args) == 1:
             print("** instance id missing **")
         else:
-            objecto = {}
+            obj_ect = {}
 
     def do_all(self, args):
         """Prints all string representation of all instances"""
-        print(str(objecto))
+        obj_ect = BaseModel()
+        print(str(obj_ect))
 
     def do_update(self, args):
         """Updates an instance based on the class name"""
-        pass
+        obj_ect = BaseModel()
+        print(obj_ect)
 
 
 if __name__ == '__main__':
