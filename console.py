@@ -45,7 +45,7 @@ class HBNBCommand(cmd.Cmd):
         obj_ect = BaseModel()
         if not obj_ect.__class__.__name__:
             print("** class doesn't exist **")
-        elif len(obj_ect.__class__.__name__) == 0:
+        elif len(args) == 0:
             print("** class name missing **")
         print(obj_ect)
 
@@ -63,8 +63,7 @@ class HBNBCommand(cmd.Cmd):
             if len(str(obj_ect.id.__class__)) == 0:
                 print("** no instance found **")
             else:
-                print("There is an object")
-                print(obj_ect.id)
+                print(obj_ect)
         else:
             print(obj_ect)
 
@@ -80,12 +79,12 @@ class HBNBCommand(cmd.Cmd):
         else:
             obj_ect = {}
 
-    def do_all(self, args):
+    def do_all(self):
         """Prints all string representation of all instances"""
         obj_ect = BaseModel()
         print(str(obj_ect))
 
-    def do_update(self, args):
+    def do_update(self):
         """Updates an instance based on the class name"""
         obj_ect = BaseModel()
         print(obj_ect)
