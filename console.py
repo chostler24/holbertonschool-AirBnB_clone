@@ -8,6 +8,8 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
+from models.engine.file_storage import FileStorage
+from models import storage
 valid_class = {"BaseModel": BaseModel,
                "User": User,
                "State": State,
