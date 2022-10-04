@@ -42,7 +42,6 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """Create a new object"""
-<<<<<<< HEAD
         if len(args) == 0:
             print("** class name missing **")
         elif args not in valid_class.keys():
@@ -51,14 +50,6 @@ class HBNBCommand(cmd.Cmd):
             object = valid_class[args]()
             print(object.id)
             object.save()
-=======
-        obj_ect = BaseModel()
-        if not obj_ect.__class__.__name__:
-            print("** class doesn't exist **")
-        elif len(args) == 0:
-            print("** class name missing **")
-        print(obj_ect)
->>>>>>> f9bbe14ec935cbe7c101e076247232e02679ee25
 
     def do_show(self, args):
         """Prints the string representation of an instance"""
