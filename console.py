@@ -25,11 +25,11 @@ class HBNBCommand(cmd.Cmd):
     """class defining console as HBNBCommand for its name"""
     prompt = "(hbnb) "
 
-    def do_quit(self, arg):
+    def do_quit(self, args):
         """Quit command to exit the program\n"""
         return True
 
-    def do_EOF(self, arg):
+    def do_EOF(self, args):
         """EOF command to exit the program\n"""
         return True
 
@@ -78,11 +78,11 @@ class HBNBCommand(cmd.Cmd):
         else:
             objecto = {}
 
-    def do__all(self):
+    def do__all(self, args):
         """Prints all string representation of all instances"""
         print(str(objecto))
 
-    def do__update(self):
+    def do__update(self, args):
         """Updates an instance based on the class name"""
         pass
 
