@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """console.py module for tasks 7-8"""
+
 import cmd
 from models.base_model import BaseModel
 from models.user import User
@@ -10,6 +11,8 @@ from models.place import Place
 from models.review import Review
 from models.engine.file_storage import FileStorage
 from models import storage
+
+
 valid_class = {"BaseModel": BaseModel,
                "User": User,
                "State": State,
@@ -25,6 +28,7 @@ objecto = object()
 
 class HBNBCommand(cmd.Cmd):
     """class defining console as HBNBCommand for its name"""
+
     prompt = "(hbnb) "
 
     def do_quit(self, args):
@@ -51,7 +55,6 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """Prints the string representation of an instance"""
-        print(objecto)
         for arg in args:
             if len(arg) == 0:
                 print("** class doesn't exist **")
@@ -66,7 +69,6 @@ class HBNBCommand(cmd.Cmd):
                 print("There is an object")
                 print(objecto.id)
         else:
-            print("How tho")
             print(objecto)
 
     def do_destroy(self, args):
