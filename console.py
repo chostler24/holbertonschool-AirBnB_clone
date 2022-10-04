@@ -78,7 +78,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 1:
             print("** instance id missing **")
         else:
-            print(FileStorage.__object)
+            del FileStorage.__objects
 
     def do_all(self):
         """Prints all string representation of all instances"""
