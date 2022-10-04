@@ -50,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, args):
         """Prints the string representation of an instance"""
         print(objecto)
-        for arg in args:    
+        for arg in args:
             if len(arg) == 0:
                 print("** class doesn't exist **")
             elif len(objecto.__class__.__name__) == 0:
