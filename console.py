@@ -52,6 +52,7 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, args):
         """Prints the string representation of an instance"""
         obj_ect = BaseModel()
+        obj_all = storage.all()
         for arg in args:
             if len(arg) == 0:
                 print("** class doesn't exist **")
@@ -65,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print(obj_ect)
         else:
-            print(obj_ect)
+            print(obj_all)
 
     def do_destroy(self, args):
         """Deletes instance based on id"""
@@ -77,7 +78,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 1:
             print("** instance id missing **")
         else:
-            obj_ect = {}
+            print(FileStorage.__object)
 
     def do_all(self):
         """Prints all string representation of all instances"""
