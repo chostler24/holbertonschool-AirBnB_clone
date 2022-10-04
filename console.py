@@ -20,9 +20,6 @@ valid_class = {"BaseModel": BaseModel,
                }
 
 
-objecto = object()
-
-
 class HBNBCommand(cmd.Cmd):
     """class defining console as HBNBCommand for its name"""
     prompt = "(hbnb) "
@@ -41,13 +38,14 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """Create a new object"""
-        obj_ect = BaseModel()
-        if not obj_ect.__class__.__name__:
-            print("** class doesn't exist **")
-        elif len(obj_ect.__class__.__name__) == 0:
+        if len(args) == 0:
             print("** class name missing **")
-        objecto = obj_ect
-        print(objecto)
+        elif args not in valid_class.keys():
+            print("** class doesn't exist **")
+        else:
+            object = valid_class[args]()
+            print(object.id)
+            object.save()
 
     def do_show(self, args):
         """Prints the string representation of an instance"""
