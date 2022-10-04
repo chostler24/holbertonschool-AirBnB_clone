@@ -53,17 +53,19 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """Prints the string representation of an instance"""
+        args = args.split(" ")
         if len(args) == 0:
             print("** class name missing **")
-        elif args not in valid_class.keys():
+        elif args[0] not in valid_class.keys():
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
-        if hasattr(object, "id"):
-            if len(str(object.id.__class__)) == 0:
-                print("** no instance found **")
-            else:
-                print(object)
+        try:
+            new_object = FileStorage._FileStorage__objects[
+                f"{args[0]}.{args[1]}"]
+            print(new_object)
+        except KeyError:
+            print("** no instance found **")
 
     def do_destroy(self, args):
         """Deletes instance based on id"""
