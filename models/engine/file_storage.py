@@ -40,10 +40,13 @@ class FileStorage:
         """serializes __objects to the JSON file (path: __file_path)"""
         from sys import argv
         try:
-            lst = (load_from_json_file(self.__file_path))
+            dict = {}
+            for key, obj in self.__objects.items():
+                dict[key] = obj.to_dict()
+                save_to_json_file(dict, self.__file_path)
+                pass
         except FileNotFoundError:
-            lst = []
-        save_to_json_file(lst + argv[1:], self.__file_path)
+            dict = {}
 
     def reload(self):
         """deserializes the JSON file to __objects"""

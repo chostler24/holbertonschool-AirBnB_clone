@@ -53,22 +53,17 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """Prints the string representation of an instance"""
-        obj_ect = BaseModel()
-        obj_all = storage.all()
-        for arg in args:
-            if len(arg) == 0:
-                print("** class doesn't exist **")
-            elif len(obj_ect.__class__.__name__) == 0:
-                print("** class name missing **")
-            elif len(args) == 1:
-                print("** instance id missing **")
-        if hasattr(obj_ect, "id"):
-            if len(str(obj_ect.id.__class__)) == 0:
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args not in valid_class.keys():
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        if hasattr(object, "id"):
+            if len(str(object.id.__class__)) == 0:
                 print("** no instance found **")
             else:
-                print(obj_ect)
-        else:
-            print(obj_all)
+                print(object)
 
     def do_destroy(self, args):
         """Deletes instance based on id"""
